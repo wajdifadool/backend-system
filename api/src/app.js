@@ -1,15 +1,12 @@
-import express from 'express';
+// // USED FOR TESTING
+import express from 'express'
+import eventsRoutes from './routes/events.routes'
+const app = express()
 
-const app = express();
-
-app.use(express.json());
-
+app.use(express.json())
+app.use('/events', eventsRoutes)
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok' });
-});
+  res.status(200).json({ status: 'ok' })
+})
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default app
