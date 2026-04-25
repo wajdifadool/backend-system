@@ -19,7 +19,7 @@ const worker = new Worker(
 
     await updateEventStatus(eventId, 'processing')
 
-    await new Promise((res) => setTimeout(res, 30000))
+    await new Promise((res) => setTimeout(res, 500))
 
     await updateEventStatus(eventId, 'completed')
 
